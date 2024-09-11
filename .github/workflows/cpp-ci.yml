@@ -22,10 +22,13 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y g++
 
     - name: Build the application
-      run: g++ -o test test.cpp
+      run: g++ -o HelloWorld main.cpp
+
+    - name: Build the tests
+      run: g++ -o tests test.cpp
 
     - name: Run the application
-      run: ./test
+      run: ./HelloWorld
 
     - name: Run the tests
-      run: ./test && echo "All teste passed!"
+      run: ./tests && echo "All tests passed!"
